@@ -21,4 +21,7 @@
 
     console.log(formHandler);
     formHandler.addInputHandler(Validation.isCompanyEmail);
+
+    // Decaf Validation Challenge
+    formHandler.addDecafHandler(Validation.isDecaf);
 })(window);

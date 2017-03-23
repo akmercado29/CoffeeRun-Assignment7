@@ -47,6 +47,25 @@
         });
     };
 
+    // Decaf Validation Challenge
+    FormHandler.prototype.addDecafHandler = function(fn) {
+        console.log('Setting decaf handler for form');
+
+        $('#strengthLevel').on('change', function(event) {
+            event.preventDefault();
+            var coffeeStrength = $('#strengthLevel').val();
+            var coffeeOrder = $('#coffeeOrder').val();
+            var message = '';
+
+            if (fn(coffeeOrder, coffeeStrength)) {
+                event.target.setCustomValidity('');
+            } else {
+                message = 'Please select a strength level lower than 20 for decaf!';
+                event.target.setCustomValidity(message);
+            }
+        });
+    };
+
     App.FormHandler = FormHandler;
     window.App = App;
 
