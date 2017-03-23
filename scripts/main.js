@@ -19,7 +19,7 @@
         checkList.addRow.call(checkList, data);
     });
 
-    console.log(formHandler);
+    //console.log(formHandler);
     formHandler.addInputHandler(Validation.isCompanyEmail);
 
     // Decaf Validation Challenge

@@ -9,11 +9,10 @@
 
         // Decaf Validation Challenge
         isDecaf: function(coffeeOrder, coffeeStrength) {
-            if (/decaf/.test(coffeeOrder) && coffeeStrength > 20){
+            if (/decaf/.test(coffeeOrder) && coffeeStrength > 20) {
                 return false;
-            } else {
-                return true;
             }
+            return true;
         }
     };
 

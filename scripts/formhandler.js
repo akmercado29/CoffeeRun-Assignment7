@@ -49,16 +49,17 @@
 
     // Decaf Validation Challenge
     FormHandler.prototype.addDecafHandler = function(fn) {
-        console.log('Setting decaf handler for form');
+        //console.log('Setting decaf handler for form');
 
-        $('#strengthLevel').on('change', function(event) {
-            event.preventDefault();
+        this.$formElement.on('input', '[name="strength"]', function(event) {
             var coffeeStrength = $('#strengthLevel').val();
             var coffeeOrder = $('#coffeeOrder').val();
             var message = '';
 
             if (fn(coffeeOrder, coffeeStrength)) {
-                event.target.setCustomValidity('');
+                //event.target.setCustomValidity('');
+                document.getElementById('coffeeOrder').setCustomValidity('');
+                document.getElementById('strengthLevel').setCustomValidity('');
             } else {
                 message = 'Please select a strength level lower than 20 for decaf!';
                 event.target.setCustomValidity(message);
